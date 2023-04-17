@@ -1,0 +1,51 @@
+<!doctype html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skin Disease Detection</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  
+</head>
+
+
+<body style="background: #e6f7fc;" text-align="center">
+<h1 style="color:rgb(14, 14, 14);">Capstone final project</h1>
+<h2 style="color:rgb(0, 0, 0);">Skin disease detection</h2><p>
+<h4 style="color:rgb(0, 0, 0);">Upload an image and click submit</h4>
+
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+	<p style="color:rgb(40, 40, 40);">
+		<input type="file" name="file" autocomplete="off" required>
+	</p>
+    </dl>
+    <p style="color:rgb(0, 0, 0);">
+	<input type="submit" name="submit" value="Submit">
+    </p>
+</form>
+
+
+
+<p style="color:rgb(0, 0, 0);">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+        This disease could be: <u><h3 style="color:rgb(0, 0, 0);">{{ messages[0] }}</h3></u><br>
+        <img src="{{ messages[1] }}" width="300", height="225">
+       
+	  {% endif %}
+	{% endwith %}
+</p>
+
+
+
+</body>
+
+
