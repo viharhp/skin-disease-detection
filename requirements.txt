@@ -1,4 +1,4 @@
-Flask==2.2.2
+Flask==2.2.5
 Werkzeug==2.2.2
 NumPy==1.22.3
 requests==2.27.1
